@@ -1,5 +1,5 @@
-import * as acorn from 'acorn'
-import * as walk from 'acorn/dist/walk'
+import * as acorn from 'acorn-loose'
+import * as walk from 'acorn-loose/dist/walk'
 import BaseLexer from './base-lexer'
 
 const WalkerBase = Object.assign({}, walk.base, {

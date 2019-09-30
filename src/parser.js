@@ -25,7 +25,7 @@ const lexers = {
 
   default: ['JavascriptLexer']
 }
-console.log('lexers are:' , lexers);
+
 const lexersMap = {
   HandlebarsLexer,
   SwigLexer,
