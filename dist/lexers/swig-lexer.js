@@ -5,7 +5,6 @@ SwigLexer = function (_BaseLexer) {_inherits(SwigLexer, _BaseLexer);
     options));
 
     _this.functions = options.functions || ['t'];
-    console.log(_this.functions);
 
     _this.createFunctionRegex();
     _this.createArgumentsRegex();return _this;
@@ -15,7 +14,6 @@ SwigLexer = function (_BaseLexer) {_inherits(SwigLexer, _BaseLexer);
       var matches = void 0;
 
       while (matches = this.functionRegex.exec(content)) {
-        console.log('function matches are ', matches[0]);
         var args = this.parseArguments(matches[1] || matches[2]);
         this.populateKeysFromArguments(args);
       }
@@ -31,7 +29,7 @@ SwigLexer = function (_BaseLexer) {_inherits(SwigLexer, _BaseLexer);
 
       while (matches = this.argumentsRegex.exec(args)) {
         var arg = matches[1];
-        console.log('arg matches: ', matches);
+        // console.log('arg matches: ', matches);
         var parts = arg.split('=');
         result.arguments.push(arg);
         if (parts.length === 2 && this.validateString(parts[1])) {
@@ -84,7 +82,7 @@ SwigLexer = function (_BaseLexer) {_inherits(SwigLexer, _BaseLexer);
       '|' +
       _baseLexer2.default.stringPattern +
       ')?';
-      console.log(pattern);
+      // console.log(pattern);
       this.argumentsRegex = new RegExp(pattern, 'gi');
       return this.argumentsRegex;
     } }]);return SwigLexer;}(_baseLexer2.default);exports.default = SwigLexer;module.exports = exports['default'];

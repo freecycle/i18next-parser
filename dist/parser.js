@@ -25,7 +25,7 @@ var lexers = {
 
   default: ['JavascriptLexer'] };
 
-console.log('lexers are:', lexers);
+
 var lexersMap = {
   HandlebarsLexer: _handlebarsLexer2.default,
   SwigLexer: _swigLexer2.default,
